@@ -10,8 +10,9 @@ const useStorage=(file) =>{
     
 //We use useEffect hook because everytime there is a new file upload this hook needs to run
     useEffect(()=>{
-        //references to the file
+        //references of the file in firebase storage .ie. we store the file with file name
         const storageRef=projectStorage.ref(file.name);
+        //reference of the file in firestore .ie. we save all the url of the image in a collection called images
         const collectionRef=projectFirestore.collection('images');
         //Upload file to the reference created above,since this is asynchronous,we add some listeners, like on here which tells the state of upload .ie. complete or not
         storageRef.put(file).on('state_changed',(snap)=>{
