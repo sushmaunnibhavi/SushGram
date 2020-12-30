@@ -22,7 +22,7 @@ const UploadForm = () => {
             setError('Please select an image file (png or jpeg)');
         }
     }
-
+//We pass the props file ans setFile to use in ProgressBar component
     return(
         <form>
             <input type="file" onChange={changeHandler}/>
