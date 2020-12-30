@@ -14,8 +14,11 @@ import 'firebase/firestore';
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
+//Initialize storage
   const projectStorage = firebase.storage();
+//Initialize firestore
   const projectFirestore = firebase.firestore();
+//Anytime we want to interact with storage and firestore,we use above created constants.
   const timestamp=firebase.firestore.FieldValue.serverTimestamp;
 
   export {projectStorage,projectFirestore,timestamp};
